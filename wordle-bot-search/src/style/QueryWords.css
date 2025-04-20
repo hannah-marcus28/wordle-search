@@ -2,11 +2,15 @@
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
+    font-family: 'Montserrat',
+    sans-serif;
   }
   
   .query-words-mobile {
     padding: 10px;
     font-size: 16px;
+    font-family: 'Montserrat',
+    sans-serif;
   }
   
   .query-words input {
@@ -14,11 +18,15 @@
     font-size: 1rem;
     width: 70%;
     margin-right: 10px;
+    font-family: 'Montserrat',
+    sans-serif;
   }
   
   .query-words button {
     padding: 8px 12px;
     font-size: 1rem;
+    font-family: 'Montserrat',
+    sans-serif;
   }
   
   .query-words-mobile input,
@@ -26,4 +34,6 @@
     width: 100%;
     margin: 5px 0;
     font-size: 1.1rem;
+    font-family: 'Montserrat',
+    sans-serif;
   }

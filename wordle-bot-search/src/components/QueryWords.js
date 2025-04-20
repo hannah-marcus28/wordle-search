@@ -9,9 +9,13 @@ const QueryWords = () => {
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
-    fetch('/words.json')
+    console.log("useEffect ran")
+    fetch(process.env.PUBLIC_URL + '/words.json')
       .then(response => response.json())
-      .then(data => setWordMap(data))
+      .then(data => {
+        console.log("Fetched wordMap:", data);
+        setWordMap(data);
+      })
       .catch(error => console.error('Error loading word map:', error));
 
     setMobile(isMobile());
@@ -23,6 +27,7 @@ const QueryWords = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const trimmedInput = input.trim();
+    console.log("Searching for:", trimmedInput);
     const mappedValue = wordMap[trimmedInput];
     setResult(mappedValue || 'No match found');
   };
@@ -34,12 +39,12 @@ const QueryWords = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Enter your first word results"
+          placeholder="Example: GYYXX"
         />
         <button type="submit">Search</button>
       </form>
       <div>
-        {result && <p>Result: {result}</p>}
+        {result && <p>You should use: {result}</p>}
       </div>
     </div>
   );
