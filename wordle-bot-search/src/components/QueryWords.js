@@ -27,8 +27,9 @@ const QueryWords = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         const trimmedInput = input.trim();
-        console.log("Searching for:", trimmedInput);
-        const mappedValue = wordMap[trimmedInput];
+        const finalInput = trimmedInput.toUpperCase();
+        console.log("Searching for:", finalInput);
+        const mappedValue = wordMap[finalInput];
         setResult(mappedValue || 'No match found');
     };
 
@@ -39,7 +40,7 @@ const QueryWords = () => {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Example: GYYXX"
+                    placeholder="Examples: GYYXX, xxyxg"
                 />
                 <button type="submit">Search</button>
             </form>
